@@ -34,7 +34,9 @@ describe('Remove User Tests', () => {
 
         // Remove the first user
         const removedEmployee = userSvc.removeUser(id1);
-        expect(removedEmployee).not.toBeNull();
+        if (!removedEmployee) {
+            throw new Error(`User with id ${id1} should exist`);
+        }
         expect(removedEmployee.id).toBe(id1);
         expect(removedEmployee.firstName).toBe(name1);
 

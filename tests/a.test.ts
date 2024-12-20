@@ -26,10 +26,16 @@ describe('UserService Tests', () => {
         userSvc.createUser(id2, name2, 'Xu');
 
         const employeeRes = userSvc.getUser(id1);
+        if (!employeeRes) {
+            throw new Error(`User with id ${id1} should exist`);
+        }
         expect(employeeRes.id).toBe(id1);
         expect(employeeRes.firstName).toBe(name1);
 
         const employeeRes2 = userSvc.getUser(id2);
+        if (!employeeRes2) {
+            throw new Error(`User with id ${id2} should exist`);
+        }
         expect(employeeRes2.id).toBe(id2);
         expect(employeeRes2.firstName).toBe(name2);
     });
@@ -46,6 +52,9 @@ describe('UserService Tests', () => {
         userSvc.createUser(id2, name2, 'Xu');
 
         const employee = userSvc.removeUser(id1);
+        if (!employee) {
+            throw new Error(`User with id ${id1} should exist`);
+        }
         expect(employee.id).toBe(id1);
         expect(employee.firstName).toBe(name1);
 

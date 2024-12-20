@@ -24,9 +24,9 @@ describe('User References Tests', () => {
 
         // Retrieve the user from the service
         const employee2 = userSvc.getUser(id1);
-
-        // Assertions to verify the original user remains unchanged in the service
-        expect(employee2).not.toBeNull();
+        if (!employee2) {
+            throw new Error(`User with id ${id1} should exist`);
+        }
         expect(employee2.id).toBe(id1);
         expect(employee2.firstName).toBe(name1);
     });

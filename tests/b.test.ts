@@ -38,13 +38,18 @@ describe('UserService Tests', () => {
 
         // Retrieve and verify first user
         const employeeRes = userSvc.getUser(id1);
+        if (!employeeRes) {
+            throw new Error(`User with id ${id1} should exist`);
+        }
         expect(employeeRes).not.toBeNull();
         expect(employeeRes.id).toBe(id1);
         expect(employeeRes.firstName).toBe(name1);
 
         // Retrieve and verify second user
         const employeeRes2 = userSvc.getUser(id2);
-        expect(employeeRes2).not.toBeNull();
+        if (!employeeRes2) {
+            throw new Error(`User with id ${id2} should exist`);
+        }
         expect(employeeRes2.id).toBe(id2);
         expect(employeeRes2.firstName).toBe(name2);
     });

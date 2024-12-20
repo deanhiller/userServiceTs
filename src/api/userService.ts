@@ -17,9 +17,9 @@ export interface UserService {
 
     createUser(id1: number, name1: string, hiller: string): UserDto;
 
-    getUser(id1: number): UserDto;
+    getUser(id1: number): UserDto | undefined;
 
-    removeUser(id1: number): UserDto;
+    removeUser(id1: number): UserDto | undefined;
 
     addUserListener(userListener: UserListener): void;
 
