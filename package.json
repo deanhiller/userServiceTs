@@ -2,7 +2,11 @@
   "name": "userservicets",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test-a": "jest tests/a.test.ts",
+    "test-b": "jest tests/b.test.ts",
+    "test-c": "jest tests/c.test.ts",
+    "test-d": "jest tests/d.test.ts",
+    "test-all": "jest"
   },
   "version": "1.0.0",
   "description": "",
