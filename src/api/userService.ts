@@ -15,11 +15,11 @@ export interface UserListener {
 
 export interface UserService {
 
-    createUser(id1: number, name1: string, hiller: string): UserDto;
+    createUser(id: number, firstName: string, lastName: string): UserDto;
 
-    getUser(id1: number): UserDto | undefined;
+    getUser(id: number): UserDto | undefined;
 
-    removeUser(id1: number): UserDto | undefined;
+    removeUser(id: number): UserDto | undefined;
 
     addUserListener(userListener: UserListener): void;
 

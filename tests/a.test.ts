@@ -59,7 +59,7 @@ describe('UserService Tests', () => {
         expect(employee.firstName).toBe(name1);
 
         const user = userSvc.getUser(id1);
-        expect(user).toBeNull();
+        expect(user).toBeUndefined();
     });
 });;
 
